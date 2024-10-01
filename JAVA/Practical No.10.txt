@@ -1,0 +1,61 @@
+10.	Demonstrate thread in Java using thread class
+ANS:-
+
+class ThreadClassDemo extends Thread
+{	private int number;
+   	public ThreadClassDemo(int number)
+	{	this.number = number;
+	}
+	public void run()
+	{	int counter = 0;
+      		int numInt = 0;
+      		do
+		{	numInt = (int) (counter + 10);
+			System.out.println(this.getName() + " prints " + numInt);
+         			counter++;
+      		} while(numInt != number);
+		System.out.println("** Correct! " + this.getName() + "printed " + counter + " times.**");
+   	}
+}
+public class Demonstrate
+{	public static void main(String [] args)
+	{	System.out.println("Starting thread_1...");
+      		Thread thread_1 = new ThreadClassDemo(15);
+      		thread_1.start();
+      		try
+		{	thread_1.join();
+      		} 
+		catch (InterruptedException e)
+		{	System.out.println("Thread interrupted.");
+      		}
+  		System.out.println("Starting thread_2...");
+      		Thread thread_2 = new ThreadClassDemo(20);
+      		thread_2.start();
+      		System.out.println("main() is ending...");
+   	}
+}
+
+Output:-
+
+Starting thread_1...
+Thread-0 prints 10
+Thread-0 prints 11
+Thread-0 prints 12
+Thread-0 prints 13
+Thread-0 prints 14
+Thread-0 prints 15
+** Correct! Thread-0printed 6 times.**
+Starting thread_2...
+main() is ending...
+Thread-1 prints 10
+Thread-1 prints 11
+Thread-1 prints 12
+Thread-1 prints 13
+Thread-1 prints 14
+Thread-1 prints 15
+Thread-1 prints 16
+Thread-1 prints 17
+Thread-1 prints 18
+Thread-1 prints 19
+Thread-1 prints 20
+** Correct! Thread-1printed 11 times.**

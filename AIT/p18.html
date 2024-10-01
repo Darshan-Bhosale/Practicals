@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div#translate{
+  width: 300px;
+  height: 60px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform: translate(50px,25px);
+}
+div {
+  width: 300px;
+  height: 50px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+div#rotate {
+  transform: rotate(10deg);
+}
+div#scale {
+  margin: 150px;
+  width: 200px;
+  height: 100px;
+  background-color: yellow;
+  border: 1px solid black;
+  transform: scale(2,3);
+}
+</style>
+</head>
+<body>
+    <h1>The translate() Method</h1>
+    <div  id="translate">
+        This div element is moved 50 pixels to the right, and 25 pixels down from its current position.
+        </div>
+
+<h1>The rotate() Method</h1>
+<div>
+This a normal div element.
+</div>
+
+<div id="rotate">
+This div element is rotated clockwise 10 degrees.
+</div>
+
+<h1>The scale() Method</h1>
+<div id="scale">
+This div element is two times of its original width, and three times of its original height.
+</div>
+</body>
+</html>

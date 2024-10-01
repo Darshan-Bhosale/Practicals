@@ -1,0 +1,60 @@
+2.To perform deletion in a singly linked list. 
+<html>
+<body>
+<script>
+var head;   
+class Node
+{
+  constructor(val) 
+ 	{  	 	
+ 	  this.data = val; 
+ 	 	this.next = null; 
+ 	} 
+} 
+function deleteNode(key) 
+{  	 	
+ 	 	var temp = head, prev = null; 
+ 	 	if (temp != null && temp.data == key) 
+ 	 	{ 
+ 	 	 	head = temp.next; 
+ 	 	 	return; 
+ 	 	} 
+    while (temp != null && temp.data != key) 
+    { 
+ 	 	 	prev = temp; 
+ 	 	 	temp = temp.next; 
+ 	 	} 
+    if (temp == null) 
+ 	 	 	return; 
+    prev.next = temp.next; 
+ } 
+ function Insert(new_data) 
+ {   
+    var new_node = new Node(new_data); 
+ 	 	new_node.next = head; 
+ 	 	head = new_node; 
+ } 
+ function printList() 
+ { 
+
+ 	 	tnode = head; 
+ 	 	while (tnode != null) 
+ 	 	{  	 	 	
+      console.log(tnode.data + " "); 
+ 	 	 	tnode = tnode.next; 
+ 	 	} 
+ } 
+ 	 	Insert(7); 
+ 	 	Insert (1); 
+ 	 	Insert (3); 
+ 	 	Insert (2); 
+ 
+ 	 	console.log("Created Linked list is:<br/>");  	 	printList(); 
+ 	 	deleteNode(1); 
+ 	 	console.log("<br/>Linked List after Deletion of 1:<br/>"); 
+ 	 	printList();
+</script>
+</body>
+</html>
+Output:-
+

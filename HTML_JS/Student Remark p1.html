@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>Report Card</title>
+</head>
+<body>
+    <form>
+    <h3>Report Card</h3>
+    STUDENT NAME:<input type="text" id="name"><br>
+    C:<input type="text" id="c"><br>
+    C++:<input type="text" id="c++"><br>
+    HTML:<input type="text" id="html"><br>
+    JAVA:<input type="text" id="java"><br>    
+    TOTAL:<input type="text" id="total"><br>    
+    AVERAGE:<input type="text" id="ave" ><br>    
+    REMARK:<input type="text" id="re"><br>    
+    <input type="button" value="check" onclick="check ()">
+    </form>
+    <script>
+        function check()
+        {
+            var a,b,c,d,e,ave,name;
+            name=document.getElementById("name").value;
+            a= parseInt(document.getElementById("c").value);
+            b= parseInt(document.getElementById("c++").value);
+            c= parseInt(document.getElementById("html").value);
+            d= parseInt(document.getElementById("java").value);
+            e=a+b+c+d;
+            ave=e/4;
+            document.getElementById("total").value=e;
+            document.getElementById("ave").value=ave;
+             var rem;
+            if(rem>=35)
+                {
+                    document.getElementById("re").value="fail";
+                }
+            else(rem<35)
+            {
+                document.getElementById("re").value="pass";
+            }
+        }
+    </script>
+    </body>
+</html>

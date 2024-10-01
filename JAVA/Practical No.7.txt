@@ -1,0 +1,112 @@
+7.	Java program for Shopping Bill
+Name	Quantity	Price	Total Price
+Fan	2	1500.00	3000.00
+Computer	1	50000.00	50000.00
+Mobile	5	4000.00	20000.00
+Book	3	100.00	300.00
+Total Price = 73300.0
+
+ANS:-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Product
+{	private String pname;
+  	private int qty;
+  	private double price;
+  	private double totalPrice;
+
+	Product(String pname, int qty, double price, double totalPrice)
+	{	this.pname = pname;
+    		this.qty = qty;
+    		this.price = price;
+    		this.totalPrice = totalPrice;
+  	}
+	public String getPname()
+	{	return pname;
+	}
+  	public int getQty()
+	{	return qty;
+  	}
+  	public double getPrice()
+	{	return price;
+	}
+  	public double getTotalPrice()
+	{	return totalPrice;
+  	}
+	public static void displayFormat()
+	{	System.out.print("\nName      Quantity    Price   Total Price\n");
+	}
+	public void display()
+	{	System.out.format("%-9s %8d %10.2f %10.2f\n\n",pname, qty, price, totalPrice);
+  	}
+}
+public class ShoppingBill
+{	public static void main(String[] args)
+	{	String productName = null;
+    		int quantity = 0;
+    		double price = 0.0;
+    		double totalPrice = 0.0;
+    		double overAllPrice = 0.0;
+    		char choice = '\0';
+		Scanner scan = new Scanner(System.in);
+		List<Product> product = new ArrayList<Product>();
+		do
+		{	System.out.println("Enter product details,");
+      			System.out.print("Name: ");
+      			productName = scan.nextLine();
+      			System.out.print("Quantity: ");
+      			quantity = scan.nextInt();
+      			System.out.print("Price (per item): ");
+      			price = scan.nextDouble();
+			totalPrice = price * quantity;
+			overAllPrice += totalPrice;
+			product.add( new Product(productName, quantity, price, totalPrice) );
+			System.out.print("Want to add more item? (y or n): ");
+      			choice = scan.next().charAt(0);
+			scan.nextLine();
+    		}while (choice == 'y' || choice == 'Y');
+		Product.displayFormat();
+    		for (Product p : product)
+		{	p.display();
+    		}
+		System.out.println("\nTotal Price = " + overAllPrice);
+		scan.close();
+  	}
+}  
+
+
+Output:-
+Enter product details,
+Name: Fan
+Quantity: 2
+Price (per item): 1500
+Want to add more item? (y or n): y
+Enter product details,
+Name: Computer
+Quantity:1
+Price (per item): 50000
+Want to add more item? (y or n): y
+Enter product details,
+Name: Mobile
+Quantity: 5
+Price (per item): 4000
+Want to add more item? (y or n): y
+Enter product details,
+Name: Book
+Quantity: 3
+Price (per item): 100
+Want to add more item? (y or n): n
+
+Name      Quantity    Price   Total Price
+Fan              2    1500.00    3000.00
+
+Computer         1   50000.00   50000.00
+
+Mobile           5    4000.00   20000.00
+
+Book             3     100.00     300.00
+
+
+Total Price = 73300.0

@@ -1,0 +1,15 @@
+<strong>{{title_if}}</strong>
+<p *ngIf="length > 10"> Length more than 10</p>
+
+<strong>{{title_for}}</strong>
+<ul>
+    <li *ngFor="let name of Students">{{name}}</li>
+</ul>
+
+<strong>{{title_switch}}</strong>
+<div [ngSwitch]="colorSelected"> The color selected is
+    <div *ngSwitchCase="'red'"> Red </div>
+    <div *ngSwitchCase="'green'"> Green</div>
+    <div *ngSwitchCase="'black'"> Black</div>
+    <div *ngSwitchDefault> No Color Selected </div>
+</div>

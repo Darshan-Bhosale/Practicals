@@ -1,0 +1,11 @@
+/* Program to computes the length of the hypotenuse of a right triangle */
+
+class P12
+{
+	public static void main(String args[])
+	{
+		double a = 3.0, b= 4.0;
+		double c = Math.sqrt(a*a+b*b);
+		System.out.println(" Hypotenuse is :"+c);
+	}
+}

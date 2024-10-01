@@ -1,0 +1,27 @@
+4.	Java program to find the factorial using iterator.
+Factorial of a number n is given by 1 * 2 * … * (n-1) * n and it’s denoted by n!
+Example Factorial of 5= 5! = 5*4*3*2*1 or 1*2*3*4*5
+ANS:-
+
+import java.util.Scanner;
+public class FactorialRecursion
+{	public static long findFactorial(long number)
+	{	if(number == 0)
+		return 1;
+		else
+		return number*findFactorial(number-1);
+	}
+	public static void main(String[] args)
+	{	int number = 0;
+      		long result = 0;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter an integer number:: ");
+		number = scan.nextInt();
+		result = findFactorial(number);
+		System.out.println("Factorial = "+ result);
+		scan.close();
+	}
+}
+Output:-
+ Enter an integer number:: 5
+ Factorial = 120

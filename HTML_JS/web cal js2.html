@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title></title>
+    </head>
+<body>
+    <center>
+    Username:<input type="text" id="txt1" placeholder="darshanbhosale5384@gmailcom"><br><br>
+    Password:<input type="password" id="txt2" placeholder="********"><br><br>
+    <input type="button" value="login here" onclick="validate()"><br><br><br>
+    </center>
+    <form>
+    <center>
+    Num1:<input type="text" id="txt3"><br><br>
+    Num2:<input type="text" id="txt4"><br><br>
+    Result:<input type="text" id="txt5"><br><br>
+        
+    <input type="button" value="+" onclick="add()" >
+    <input type="button" value="-" onclick="sub()">
+    <input type="button" value="*" onclick="mul()">
+    <input type="button" value="/" onclick="div()"> 
+    <input type="button" value="%" onclick="mod()"> 
+    <input type="reset" value="C">
+    </center>
+    </form>
+    <script>
+    function validate()
+    {
+        var a,b;
+        a=document.getElementById("txt1").value;
+        b=document.getElementById("txt2").value;    
+    if(a=="")
+    {
+        alert("Username is required");
+    }
+    else if(b=="")
+    {
+        alert("Password is required");
+    }
+    else
+    {
+        alert("login successfully!!!");
+    }
+    }
+    function add()
+    {
+        var a,b,c;
+        a=parseInt(document.getElementById("txt3").value);
+        b=parseInt(document.getElementById("txt4").value);
+        c=a+b;
+        document.getElementById("txt5").value=c;
+    }
+    function sub()
+    {
+        var a,b,c;
+        a=parseInt(document.getElementById("txt3").value);
+        b=parseInt(document.getElementById("txt4").value);
+        c=a-b;
+        document.getElementById("txt5").value=c;
+    }
+    function mul()
+    {
+        var a,b,c;
+        a=parseInt(document.getElementById("txt3").value);
+        b=parseInt(document.getElementById("txt4").value);
+        c=a*b;
+        document.getElementById("txt5").value=c;
+    }
+    function div()
+    {
+        var a,b,c;
+        a=parseInt(document.getElementById("txt3").value);
+        b=parseInt(document.getElementById("txt4").value);
+        c=a/b;
+        document.getElementById("txt5").value=c;
+    }
+    function mod()
+    {
+        var a,b,c;
+        a=parseInt(document.getElementById("txt3").value);
+        b=parseInt(document.getElementById("txt4").value);
+        c=a%b;
+        document.getElementById("txt5").value=c;
+    }
+    </script>
+    </body>
+</html>

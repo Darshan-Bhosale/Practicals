@@ -1,0 +1,9 @@
+<form>
+  Enter Name :
+  <input type="text" name="name" #name> <br> Enter Email :
+  <input type="email" name="email" #email> <br> Enter Phone number :
+  <input type="tel" name="phone"> <br>
+
+  <button type="button" (click)="display(name.value)">Save</button>
+
+</form>

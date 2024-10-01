@@ -1,0 +1,24 @@
+<div class="text-center">
+  <form #form="ngForm" (submit)="logForm(form.value)">
+      <div class="mb-3">
+          <label>Email address</label>
+          <input name="email" #email="ngModel" required minlength="5" type="email" class="form-control" ngModel>
+          <span *ngIf="email.touched && email.invalid" class="alert alert-danger" style="background-color:red;">
+          Email is required!
+        </span>
+          <span *ngIf="email?.errors?.['minlength']" class="alert alert-danger" style="background-color:red;">
+          Invalid Email! Min 5 characters
+        </span>
+      </div>
+
+      <div class="mb-3">
+          <label>Password</label>
+          <input name="password" required type="password" class="form-control" #pass="ngModel" ngModel>
+          <span *ngIf="pass.touched && pass.invalid" class="alert alert-danger" style="background-color:red;">
+          Password is required!
+        </span>
+      </div>
+
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

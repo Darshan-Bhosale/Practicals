@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <title>Draw a Smily Face</title> 
+  <script>
+   window.onload = function(){
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        // draw stuff here
+         ctx.beginPath(); 
+         //face 
+         ctx.arc(100, 100, 90, 0, 2*Math.PI); 
+         ctx.fillStyle='yellow';
+         ctx.fill(); 
+         //smile 
+         ctx.moveTo(160, 100); 
+         ctx.arc(100, 100, 60, 0, Math.PI);  
+         //left eye 
+         ctx.moveTo(75, 70); 
+         ctx.arc(65, 70, 10, 0, 2*Math.PI);  
+         //right eye 
+         ctx.moveTo(135, 70); 
+         ctx.arc(125, 70, 10, 0, 2*Math.PI); 
+         
+    
+         ctx.lineWidth = 1; 
+         ctx.stroke(); 
+
+   };
+</script> 
+ </head> 
+ <body> 
+  <canvas id="myCanvas" width="200" height="200" style="border: 1px solid #d3d3d3;"></canvas>   
+ </body>
+</html>

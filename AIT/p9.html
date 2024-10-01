@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="/process.php">
+            First Name:<input type="text" name=" fname" placeholder="Please enter your name"><br>
+            Last Name:<input  type="text" name="lname" required><br>
+            Points:<input type="number" name="point" step="3"><br>
+            Country Code:<input type="text" name="country code" pattern="[A-Z a-z]{3}" title="There latter Country Code"><br>
+            Subject List:<input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="HTML 5"></option>
+                <option value="CSS 3"></option>
+                <option value="Java Script"></option>
+                <option value="Jquery"></option>
+                <option value="XML"></option>
+            </datalist><br>
+            Enter a date before 1991-22-12:<input type="date" name="bday" max="1991-22-12"><br>
+            Enter a date after 2019-22-10:<input type="date" name="bday" min="2019-22-10"><br>
+            Select images:<input type="file" name="img" multiple><br>
+            <input type="image" src="/Users/mac/Desktop/programs/AIT Practicals/images.jpeg" alt="Submit" width="48" height="48"><br>
+            <input type="Submit" value="Submit">
+        </form>
+    </body>
+    </html>
